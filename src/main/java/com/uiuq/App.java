@@ -38,7 +38,7 @@ public class App {
             System.out.println(lines);
             Transform transform = new Transform(lines);
 
-            System.out.println(transform);
+            transform.getGraph();
         } catch (FileNotFoundException e) {
             System.out.println("ocorreu um erro ao abrir o arquivo.");
             e.printStackTrace();

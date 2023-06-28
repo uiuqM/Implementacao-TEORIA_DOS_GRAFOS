@@ -9,6 +9,13 @@ public class Edge {
         this.u = u;
     }
 
+    public String getV(){
+        return this.v.toString();
+    }
+
+    public String getU(){
+        return this.u.toString();
+    }
     public String getName(){
         return "(" + this.v + ", "+ this.u +")";
     }

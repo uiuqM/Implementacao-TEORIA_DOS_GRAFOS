@@ -16,6 +16,14 @@ public class GraphI {
         return vertex.get(index);
     }
 
+    public ArrayList<Vertex> getAllV(){
+        return this.vertex;
+    }
+
+    public ArrayList<Edge> getAllE(){
+        return this.edges;
+    }
+
     public String toString(){
         return "Vertex array: " + vertex.toString() + "\n" + "Edges: " + edges.toString();
     }

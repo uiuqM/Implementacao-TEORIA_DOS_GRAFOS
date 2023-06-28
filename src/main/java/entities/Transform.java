@@ -2,6 +2,10 @@ package entities;
 
 import java.util.ArrayList;
 
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+
 public class Transform {
     
     private ArrayList<GraphI> graphs = new ArrayList<>();
@@ -28,6 +32,19 @@ public class Transform {
         }
     }
 
+    public void getGraph(){
+        for (GraphI i : graphs) {
+            Graph<String, DefaultEdge> g = new DefaultDirectedGraph<String, DefaultEdge>(DefaultEdge.class);
+            for (Vertex j : i.getAllV()) {
+                g.addVertex(j.getName());
+
+            }
+            for (Edge k : i.getAllE()) {
+                g.addEdge(k.getV(), k.getU());
+            }
+            System.out.println(g.toString());
+        }
+    }
     public String toString() {
         return "Graphs: " + graphs.toString();
     }
