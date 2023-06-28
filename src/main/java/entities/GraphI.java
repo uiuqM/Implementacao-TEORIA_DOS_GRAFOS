@@ -1,7 +1,7 @@
 package entities;
 import java.util.ArrayList;
 
-public class Graph {
+public class GraphI {
     private static ArrayList<Vertex> vertex = new ArrayList<>();
     private ArrayList<Edge> edges = new ArrayList<>();
     

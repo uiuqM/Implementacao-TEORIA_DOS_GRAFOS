@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Transform {
     
-    private ArrayList<Graph> graphs = new ArrayList<>();
-    private Graph graph;
+    private ArrayList<GraphI> graphs = new ArrayList<>();
+    private GraphI graph;
     Vertex v;
     Integer aux = 0;
     Integer auxE = 0;
     public Transform(ArrayList<String> lines) {
-        graph = new Graph();
+        graph = new GraphI();
         graphs.add(graph);
         for (String line : lines) {    
             if (line != " ") {

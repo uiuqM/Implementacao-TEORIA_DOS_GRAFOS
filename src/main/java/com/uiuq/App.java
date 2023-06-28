@@ -1,4 +1,4 @@
-package app;
+package com.uiuq;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import entities.Graph;
+import entities.GraphI;
 import entities.Transform;
 
 public class App {
@@ -20,7 +20,7 @@ public class App {
         Integer aux = 0;
         Scanner sc = new Scanner(arqaux);
         ArrayList<String> lines = new ArrayList<>();
-        Graph g1 = new Graph();
+        GraphI g1 = new GraphI();
 
         try {
             fr = new FileReader(arq);
