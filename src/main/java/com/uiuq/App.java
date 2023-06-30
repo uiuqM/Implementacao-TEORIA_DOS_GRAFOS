@@ -21,6 +21,8 @@ public class App {
         Scanner sc = new Scanner(arqaux);
         ArrayList<String> lines = new ArrayList<>();
         GraphI g1 = new GraphI();
+        File imgFile = new File("src/test/resources/graph.png");
+        imgFile.createNewFile();
 
         try {
             fr = new FileReader(arq);

@@ -2,10 +2,10 @@ package entities;
 import java.util.ArrayList;
 
 public class GraphI {
-    private static ArrayList<Vertex> vertex = new ArrayList<>();
+    private ArrayList<Vertex> vertex = new ArrayList<>();
     private ArrayList<Edge> edges = new ArrayList<>();
     
-    public static void addVertex(Vertex v){
+    public void addVertex(Vertex v){
         vertex.add(v);
     }
 
