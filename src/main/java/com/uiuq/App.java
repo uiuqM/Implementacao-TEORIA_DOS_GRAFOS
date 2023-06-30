@@ -7,12 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import entities.GraphI;
 import entities.Transform;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayList<String> teste = new ArrayList<>();
         String arq = "/home/uiuq/Documentos/ws-java/ImplementacaoTG/ImplementacaoTG/src/teste.txt";
         File arqaux = new File(arq);
         FileReader fr = null;
@@ -20,7 +18,6 @@ public class App {
         Integer aux = 0;
         Scanner sc = new Scanner(arqaux);
         ArrayList<String> lines = new ArrayList<>();
-        GraphI g1 = new GraphI();
         File imgFile = new File("src/test/resources/graph.png");
         imgFile.createNewFile();
 
@@ -48,9 +45,11 @@ public class App {
             try{
                 if (br != null) {
                     br.close();
+                    sc.close();
                 }
                 if (br != null) {
                     fr.close();
+                    sc.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
