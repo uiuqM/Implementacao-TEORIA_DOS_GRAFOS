@@ -11,6 +11,7 @@ import entities.Transform;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        System.setProperty("org.graphstream.ui", "javafx");
         String arq = "/home/uiuq/Documentos/ws-java/ImplementacaoTG/ImplementacaoTG/src/teste.txt";
         File arqaux = new File(arq);
         FileReader fr = null;
