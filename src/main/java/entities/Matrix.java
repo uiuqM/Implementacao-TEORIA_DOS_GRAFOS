@@ -8,7 +8,6 @@ import java.util.Map;
 public class Matrix {
     
     private Map<Integer, ArrayList<String>> mat = new HashMap<Integer, ArrayList<String>>();
-    private ArrayList<String> selected;
     private Integer auxSelect = 1;
 
     public Matrix(ArrayList<String> matrices) {
