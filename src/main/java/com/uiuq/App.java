@@ -46,6 +46,14 @@ public class App {
             val = leitura.nextInt();
             matrix.selectMatriz(val);
 
+            System.out.printf("|-----------------------------------|\n");
+            System.out.printf("|      DIGITE A OPÇÃO DESEJADA      |\n");
+            System.out.printf("|-----------------------------------|\n");
+            System.out.printf("|1 | VERIFICAR SE O GRAFO É CONEXO  |\n");
+            System.out.printf("|2 | APLICAR BUSCA EM LARGURA       |\n");
+            System.out.printf("|3 | ENCONTRAR BIPARTIÇÃO           |\n");
+            System.out.printf("|-----------------------------------|\n");
+
             leitura.close();
 
             //transform.getGraph();
