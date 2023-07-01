@@ -32,6 +32,18 @@ public class Transform {
         }
     }
 
+    public void addGraphIs(String line) {
+        v = new Vertex("v"+aux.toString());
+        graph.addVertex(v);
+        for (char c : line.replaceAll("\\s+","").toCharArray()) {
+            if (c == '1') {
+                graph.addEdge(v, new Vertex("v"+auxE.toString()));
+            }
+            auxE++;
+        }
+        auxE = 0;
+    }
+
     public void getGraph() throws IOException {
         for (GraphI i : graphs) {
             Graph g = new MultiGraph("h");

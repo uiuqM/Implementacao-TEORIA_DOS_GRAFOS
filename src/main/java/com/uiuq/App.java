@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import entities.Transform;
+import entities.Matrix;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -18,9 +19,11 @@ public class App {
         BufferedReader br = null;
         Integer aux = 0;
         Scanner sc = new Scanner(arqaux);
+        Scanner leitura = new Scanner(System.in);
         ArrayList<String> lines = new ArrayList<>();
         File imgFile = new File("src/test/resources/graph.png");
         imgFile.createNewFile();
+        Integer val;
 
         try {
             fr = new FileReader(arq);
@@ -36,9 +39,17 @@ public class App {
             }
             fr.close();
             System.out.println(lines);
-            Transform transform = new Transform(lines);
+            // Transform transform = new Transform(lines);
+            Matrix matrix = new Matrix(lines);
 
-            transform.getGraph();
+            System.out.println("Qual grafo deseja manipular?");
+            System.out.println("Digite um valor de 1 a " + matrix.getNumber());
+            val = leitura.nextInt();
+            matrix.selectMatriz(val);
+
+            leitura.close();
+
+            //transform.getGraph();
         } catch (FileNotFoundException e) {
             System.out.println("ocorreu um erro ao abrir o arquivo.");
             e.printStackTrace();
