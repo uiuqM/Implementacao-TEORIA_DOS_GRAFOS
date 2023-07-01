@@ -1,5 +1,6 @@
 package entities;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,8 +25,10 @@ public class Matrix {
         System.out.println("foram detectados " + auxSelect + " matrizes.");
     }
 
-    public void selectMatriz(Integer select){
+    public void selectMatriz(Integer select) throws IOException{
         System.out.println(mat.get(select));
+        Transform ts = new Transform(mat.get(select));
+        ts.getGraph();
 
     }
 

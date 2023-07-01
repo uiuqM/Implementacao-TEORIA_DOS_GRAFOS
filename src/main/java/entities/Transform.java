@@ -32,7 +32,7 @@ public class Transform {
         }
     }
 
-    public void addGraphIs(String line) {
+    public void manipulateGraph(String line) {
         v = new Vertex("v"+aux.toString());
         graph.addVertex(v);
         for (char c : line.replaceAll("\\s+","").toCharArray()) {
