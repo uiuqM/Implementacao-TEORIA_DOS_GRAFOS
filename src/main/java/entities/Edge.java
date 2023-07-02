@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.ArrayList;
-
 public class Edge {
     private Vertex v;
     private Vertex u;
