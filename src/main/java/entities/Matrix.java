@@ -9,6 +9,7 @@ public class Matrix {
     
     private Map<Integer, ArrayList<String>> mat = new HashMap<Integer, ArrayList<String>>();
     private Integer auxSelect = 1;
+    private Transform ts;
 
     public Matrix(ArrayList<String> matrices) {
         mat.put(auxSelect, new ArrayList<String>());
@@ -26,9 +27,16 @@ public class Matrix {
 
     public void selectMatriz(Integer select) throws IOException{
         System.out.println(mat.get(select));
-        Transform ts = new Transform(mat.get(select));
+        ts = new Transform(mat.get(select));
         ts.getGraph();
 
+    }
+
+    public String verifyConnect() {
+        if (ts.verifyGraph()) {
+                return "SIM";
+        }
+        return "NAO";
     }
 
     public String getNumber(){

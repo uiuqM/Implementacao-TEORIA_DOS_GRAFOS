@@ -57,19 +57,13 @@ public class Transform {
             g.setStrict(false);
             g.setAutoCreate( true );
             g.display();
-            // JGraphXAdapter<String, DefaultEdge> graphAdapter = new JGraphXAdapter<String, DefaultEdge>(g);
-
-            // mxIGraphLayout layout = new mxCircleLayout(graphAdapter);
-            // layout.execute(graphAdapter.getDefaultParent());
-            
-            
-            // BufferedImage image = mxCellRenderer.createBufferedImage(graphAdapter, null, 2, Color.WHITE, true, null, null);
-            // File imgFile = new File("src/test/resources/graph.png");
-            // ImageIO.write(image, "PNG", imgFile);
-            
-            // assert(imgFile.exists());
         }
     }
+
+    public boolean verifyGraph(){
+        return graph.isConnected();
+    }
+    
     public String toString() {
         return "Graphs: " + graphs.toString();
     }

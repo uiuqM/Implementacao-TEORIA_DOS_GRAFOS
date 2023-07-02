@@ -24,6 +24,41 @@ public class GraphI {
         return this.edges;
     }
 
+    public Integer getNumberVertex(){
+        return vertex.size();
+    }
+
+    public Integer getNumberEdge(){
+        return edges.size();
+    }
+
+    public boolean isConnected(){
+        if (getAllVpE().containsAll(vertex)) {
+            return true;
+        }
+        return false;
+
+        // for (Vertex v : vertex) {
+        //     for (Edge e : edges) {
+        //         if (v.getName() == e.getV() || v.getName() == e.getU()) {
+        //             break;
+        //         }
+                
+        //     }
+        //     return true;
+        // }
+        // return false;
+    }
+
+    private ArrayList<Vertex> getAllVpE() {
+        ArrayList<Vertex> listV = new ArrayList<Vertex>();
+        for (Edge e : edges) {
+            listV.add(e.getUobj());
+            listV.add(e.getVobj());
+        }
+        return listV;
+    }
+
     public String toString(){
         return "Vertex array: " + vertex.toString() + "\n" + "Edges: " + edges.toString();
     }

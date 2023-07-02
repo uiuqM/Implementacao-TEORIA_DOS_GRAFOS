@@ -23,6 +23,7 @@ public class App {
         File imgFile = new File("src/test/resources/graph.png");
         imgFile.createNewFile();
         Integer val;
+        Integer op;
 
         try {
             fr = new FileReader(arq);
@@ -53,6 +54,12 @@ public class App {
             System.out.printf("|2 | APLICAR BUSCA EM LARGURA       |\n");
             System.out.printf("|3 | ENCONTRAR BIPARTIÇÃO           |\n");
             System.out.printf("|-----------------------------------|\n");
+
+            op = leitura.nextInt();
+
+            if ( op == 1) {
+                System.out.println(matrix.verifyConnect());
+            }
 
             leitura.close();
 

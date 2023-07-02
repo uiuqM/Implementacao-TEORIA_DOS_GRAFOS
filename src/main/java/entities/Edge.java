@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Edge {
     private Vertex v;
     private Vertex u;
@@ -16,6 +18,15 @@ public class Edge {
     public String getU(){
         return this.u.toString();
     }
+
+    public Vertex getVobj(){
+        return this.v;
+    }
+
+    public Vertex getUobj(){
+        return this.u;
+    }
+
     public String getName(){
         return "(" + this.v + ", "+ this.u +")";
     }
