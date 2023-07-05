@@ -12,7 +12,7 @@ import entities.Matrix;
 public class App {
     public static void main(String[] args) throws Exception {
         System.setProperty("org.graphstream.ui", "javafx");
-        String arq = "/home/uiuq/Documentos/ws-java/ImplementacaoTG/ImplementacaoTG/src/teste.txt";
+        String arq = "/home/uiuq/Downloads/grafo.txt";
         File arqaux = new File(arq);
         FileReader fr = null;
         BufferedReader br = null;
@@ -58,7 +58,9 @@ public class App {
             op = leitura.nextInt();
 
             if ( op == 1) {
-                System.out.println(matrix.verifyConnect());
+                matrix.check();
+                // System.out.println(matrix.connected());
+                // System.out.println(matrix.getIndexV());
             }
 
             leitura.close();

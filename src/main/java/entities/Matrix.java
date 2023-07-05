@@ -26,17 +26,28 @@ public class Matrix {
     }
 
     public void selectMatriz(Integer select) throws IOException{
-        System.out.println(mat.get(select));
         ts = new Transform(mat.get(select));
         ts.getGraph();
 
     }
 
-    public String verifyConnect() {
-        if (ts.verifyGraph()) {
-                return "SIM";
-        }
-        return "NAO";
+    // public String verifyConnect() {
+    //     if (ts.verifyGraph()) {
+    //             return "SIM";
+    //     }
+    //     return "NAO";
+    // }
+
+    public void check() {
+        ts.verifyGraph();
+    }
+
+    public Map<Vertex, Integer> getIndexV() {
+        return ts.getIndexes();
+    }
+
+    public Map<Vertex, Integer> connected() {
+        return ts.buscarComponentesConexos(ts.getGpraphI());
     }
 
     public String getNumber(){

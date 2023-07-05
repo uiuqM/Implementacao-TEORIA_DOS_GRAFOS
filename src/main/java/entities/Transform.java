@@ -2,6 +2,8 @@ package entities;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
@@ -60,10 +62,45 @@ public class Transform {
         }
     }
 
-    public boolean verifyGraph(){
-        return graph.isConnected();
+    public void verifyGraph(){
+        graph.printBFS();
+    }
+
+    public Map <Vertex, Integer> getIndexes() {
+        return graph.getIndexMap();
     }
     
+    public static Map<Vertex, Integer> buscarComponentesConexos(GraphI g) {
+    Map<Vertex, Integer> relacaoComponentesConexos = new HashMap<>();
+    int idComponenteConexoInedito = 0;
+
+    for (Vertex v: g.getAllV()) {
+        if (relacaoComponentesConexos.get(v) == null) {
+            determinaComponenteConexo(v, idComponenteConexoInedito, g, relacaoComponentesConexos);
+            idComponenteConexoInedito++;
+        }
+    }
+    return relacaoComponentesConexos;
+}
+
+private static void determinaComponenteConexo(Vertex v, int idComponenteConexo, GraphI g, Map<Vertex, Integer> relacaoComponentesConexos) {
+    // se eu cheguei aqui, então devo marcar o vértice passado como pertencente ao componente conexo
+    relacaoComponentesConexos.put(v, idComponenteConexo);
+
+    // percorre os vizinhos...
+    for (Vertex u: g.neighborhood(v)) {
+        // se o vizinho u ainda não foi visitado, visite-o
+        if (relacaoComponentesConexos.get(u) == null) {
+            determinaComponenteConexo(u, idComponenteConexo, g, relacaoComponentesConexos);
+        }
+    }
+}
+
+
+    public GraphI getGpraphI() {
+        return graph;
+    }
+
     public String toString() {
         return "Graphs: " + graphs.toString();
     }
