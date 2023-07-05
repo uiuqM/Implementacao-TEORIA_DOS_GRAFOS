@@ -62,8 +62,8 @@ public class Transform {
         }
     }
 
-    public void verifyGraph(){
-        graph.printBFS();
+    public boolean verifyGraph(){
+        return graph.isConnected();
     }
 
     public Map <Vertex, Integer> getIndexes() {

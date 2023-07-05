@@ -1,13 +1,8 @@
 package entities;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
-import java.util.Queue;
 
 public class GraphI {
     private ArrayList<Vertex> vertex = new ArrayList<>();
@@ -69,6 +64,30 @@ public class GraphI {
             }
             
         }
+    }
+
+    public void DFS(Vertex v, boolean visitado[]) {
+        visitado[indexVertex.get(v)] = true;
+
+        for (Vertex neighbor : neighborhood(v)) {
+            if(!visitado[indexVertex.get(neighbor)]) {
+                DFS(neighbor, visitado);
+            }
+        }
+    }
+
+    public boolean isConnected() {
+        boolean visitado[] = new boolean[vertex.size()];
+
+        DFS(vertex.get(0), visitado);
+
+        // Verifica se todos os vértices foram visitados a partir do vértice 0
+        for (boolean vi : visitado) {
+            if (!vi)
+                return false;
+        }
+
+        return true;
     }
 
     public void printBFS() {

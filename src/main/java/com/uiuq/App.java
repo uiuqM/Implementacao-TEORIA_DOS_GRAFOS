@@ -58,9 +58,11 @@ public class App {
             op = leitura.nextInt();
 
             if ( op == 1) {
-                matrix.check();
-                // System.out.println(matrix.connected());
-                // System.out.println(matrix.getIndexV());
+                if(matrix.check()) {
+                    System.out.println("sim");
+                } else {
+                    System.out.println("nao");
+                }
             }
 
             leitura.close();

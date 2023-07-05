@@ -30,16 +30,9 @@ public class Matrix {
         ts.getGraph();
 
     }
-
-    // public String verifyConnect() {
-    //     if (ts.verifyGraph()) {
-    //             return "SIM";
-    //     }
-    //     return "NAO";
-    // }
-
-    public void check() {
-        ts.verifyGraph();
+    
+    public boolean check() {
+        return ts.verifyGraph();
     }
 
     public Map<Vertex, Integer> getIndexV() {
